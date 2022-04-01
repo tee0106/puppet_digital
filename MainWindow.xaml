@@ -1,0 +1,193 @@
+﻿<Window x:Class="Microsoft.Samples.Kinect.BodyBasics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        Title="Digital Puppet" 
+        Height="700" Width="800"
+        WindowStyle="None"
+        WindowState="Maximized"
+        Loaded="MainWindow_Loaded"
+        Closing="MainWindow_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="653*" />
+            <RowDefinition Height="39*" />
+        </Grid.RowDefinitions>
+        <Viewbox Grid.Row="1" HorizontalAlignment="Center" Stretch="Fill">
+            <Grid>
+                <Canvas>
+                    <Image Source="Images/Background/Screen.jpg" Name="Background" Height="424" Width="512" Stretch="Fill"/>
+                </Canvas>
+                <Image Name="People" Stretch="UniformToFill"/>
+                <Canvas Name="Puppet1">
+                    <Image gif:ImageBehavior.AnimatedSource="Images/I/Smile.gif" Name="Smile" Height="0" Width="0" Opacity="0"/>
+                    <Image Source="Images/I/0.png" Name="Face" Height="0" Width="0"/>
+                    <Image Source="Images/I/5.png" Name="CalfLeft" Height="0" Width="0"/>
+                    <Image Source="Images/I/6.png" Name="CalfRight" Height="0" Width="0"/>
+                    <Image Source="Images/I/13.png" Name="FootLeft" Height="0" Width="0"/>
+                    <Image Source="Images/I/14.png" Name="FootRight" Height="0" Width="0"/>
+                    <Image Source="Images/I/11.png" Name="ThighLeft" Height="0" Width="0"/>
+                    <Image Source="Images/I/12.png" Name="ThighRight" Height="0" Width="0"/>
+                    <Image Source="Images/I/10.png" Name="LowerBody" Height="0" Width="0"/>
+                    <Image Source="Images/I/9.png" Name="UpperBody" Height="0" Width="0"/>
+                    <Image Source="Images/I/5.png" Name="LowerArmLeft" Height="0" Width="0"/>
+                    <Image Source="Images/I/6.png" Name="LowerArmRight" Height="0" Width="0"/>
+                    <Image Source="Images/I/3.png" Name="UpperArmLeft" Height="0" Width="0"/>
+                    <Image Source="Images/I/4.png" Name="UpperArmRight" Height="0" Width="0"/>
+                    <Image Source="Images/I/1.png" Name="ShoulderLeft" Height="0" Width="0"/>
+                    <Image Source="Images/I/2.png" Name="ShoulderRight" Height="0" Width="0"/>
+                    <Image Source="Images/I/7.png" Name="HandLeft" Height="0" Width="0"/>
+                    <Image Source="Images/I/8.png" Name="HandRight" Height="0" Width="0"/>
+                    <Image gif:ImageBehavior.AnimatedSource="Images/I/Fire.gif" Name="PowerLeft" Height="0" Width="0"/>
+                </Canvas>
+                <Canvas Name="Puppet2">
+                    <Image Source="Images/facechange/Ironman2.png" Name="Facechange" Height="0" Width="0"/>
+                    <Image Source="Images/II/Ironman.png" Name="Face2" Height="0" Width="0"/>
+                    <Image Source="Images/II/SpringLeft.png" Name="CalfLeft2" Height="0" Width="0"/>
+                    <Image Source="Images/II/SpringRight.png" Name="CalfRight2" Height="0" Width="0"/>
+                    <Image Source="Images/II/JordanLeft.png" Name="FootLeft2" Height="0" Width="0"/>
+                    <Image Source="Images/II/JordanRight.png" Name="FootRight2" Height="0" Width="0"/>
+                    <Image Source="Images/II/CuisseLeft.png" Name="ThighLeft2" Height="0" Width="0"/>
+                    <Image Source="Images/II/CuisseRight.png" Name="ThighRight2" Height="0" Width="0"/>
+                    <Image Source="Images/II/Fauld.png" Name="LowerBody2" Height="0" Width="0"/>
+                    <Image Source="Images/II/Armor.png" Name="UpperBody2" Height="0" Width="0"/>
+                    <Image Source="Images/II/SpringLeft.png" Name="LowerArmLeft2" Height="0" Width="0"/>
+                    <Image Source="Images/II/SpringRight.png" Name="LowerArmRight2" Height="0" Width="0"/>
+                    <Image Source="Images/II/VambraceLeft.png" Name="UpperArmLeft2" Height="0" Width="0"/>
+                    <Image Source="Images/II/VambraceRight.png" Name="UpperArmRight2" Height="0" Width="0"/>
+                    <Image Source="Images/II/PauldronLeft.png" Name="ShoulderLeft2" Height="0" Width="0"/>
+                    <Image Source="Images/II/PauldronRight.png" Name="ShoulderRight2" Height="0" Width="0"/>
+                    <Image Source="Images/II/GloveLeft.png" Name="HandLeft2" Height="0" Width="0"/>
+                    <Image Source="Images/II/GloveRight.png" Name="HandRight2" Height="0" Width="0"/>
+                    <Image gif:ImageBehavior.AnimatedSource="Images/II/LaserLeft.gif" Name="PowerLeft2" Height="0" Width="0"/>
+                    <Image gif:ImageBehavior.AnimatedSource="Images/II/LaserRight.gif" Name="PowerRight2" Height="0" Width="0"/>
+                </Canvas>
+                <Canvas Name="Puppet3">
+                    <Image Source="Images/facechange/blacksumerice.png" Name="Facechange2" Height="0" Width="0"/>
+                    <Image Source="Images/III/0.png" Name="Face3" Height="0" Width="0"/>
+                    <Image Source="Images/III/5.png" Name="CalfLeft3" Height="0" Width="0"/>
+                    <Image Source="Images/III/6.png" Name="CalfRight3" Height="0" Width="0"/>
+                    <Image Source="Images/III/13.png" Name="FootLeft3" Height="0" Width="0"/>
+                    <Image Source="Images/III/14.png" Name="FootRight3" Height="0" Width="0"/>
+                    <Image Source="Images/III/11.png" Name="ThighLeft3" Height="0" Width="0"/>
+                    <Image Source="Images/III/12.png" Name="ThighRight3" Height="0" Width="0"/>
+                    <Image Source="Images/III/10.png" Name="LowerBody3" Height="0" Width="0"/>
+                    <Image Source="Images/III/9.png" Name="UpperBody3" Height="0" Width="0"/>
+                    <Image Source="Images/III/5.png" Name="LowerArmLeft3" Height="0" Width="0"/>
+                    <Image Source="Images/III/6.png" Name="LowerArmRight3" Height="0" Width="0"/>
+                    <Image Source="Images/III/3.png" Name="UpperArmLeft3" Height="0" Width="0"/>
+                    <Image Source="Images/III/4.png" Name="UpperArmRight3" Height="0" Width="0"/>
+                    <Image Source="Images/III/1.png" Name="ShoulderLeft3" Height="0" Width="0"/>
+                    <Image Source="Images/III/2.png" Name="ShoulderRight3" Height="0" Width="0"/>
+                    <Image Source="Images/III/7.png" Name="HandLeft3" Height="0" Width="0"/>
+                    <Image Source="Images/III/8.png" Name="HandRight3" Height="0" Width="0"/>
+                    <Image Source="Images/III/15.png" Name="PowerLeft3" Height="0" Width="0"/>
+                    <Image Source="Images/III/16.png" Name="PowerRight3" Height="0" Width="0"/>
+                </Canvas>
+                <Canvas Name="Puppet4">
+                    <Image Source="Images/IV/0.png" Name="Face4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/5.png" Name="CalfLeft4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/6.png" Name="CalfRight4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/13.png" Name="FootLeft4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/14.png" Name="FootRight4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/11.png" Name="ThighLeft4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/12.png" Name="ThighRight4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/10.png" Name="LowerBody4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/9.png" Name="UpperBody4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/5.png" Name="LowerArmLeft4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/6.png" Name="LowerArmRight4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/3.png" Name="UpperArmLeft4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/4.png" Name="UpperArmRight4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/1.png" Name="ShoulderLeft4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/2.png" Name="ShoulderRight4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/7.png" Name="HandLeft4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/8.png" Name="HandRight4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/15.png" Name="PowerLeft4" Height="0" Width="0"/>
+                    <Image Source="Images/IV/16.png" Name="PowerRight4" Height="0" Width="0"/>
+                </Canvas>
+                <Canvas Name="Puppet5">
+                    <Image Source="Images/V/0.png" Name="Face5" Height="0" Width="0"/>
+                    <Image Source="Images/V/BlackPanther.png" Name="BlackPanther" Height="0" Width="0" Opacity="1"/>
+                    <Image Source="Images/V/13.png" Name="CalfLeft5" Height="0" Width="0"/>
+                    <Image Source="Images/V/14.png" Name="CalfRight5" Height="0" Width="0"/>
+                    <Image Source="Images/V/15.png" Name="FootLeft5" Height="0" Width="0"/>
+                    <Image Source="Images/V/16.png" Name="FootRight5" Height="0" Width="0"/>
+                    <Image Source="Images/V/11.png" Name="ThighLeft5" Height="0" Width="0"/>
+                    <Image Source="Images/V/12.png" Name="ThighRight5" Height="0" Width="0"/>
+                    <Image Source="Images/V/10.png" Name="LowerBody5" Height="0" Width="0"/>
+                    <Image Source="Images/V/9.png" Name="UpperBody5" Height="0" Width="0"/>
+                    <Image Source="Images/V/5.png" Name="LowerArmLeft5" Height="0" Width="0"/>
+                    <Image Source="Images/V/6.png" Name="LowerArmRight5" Height="0" Width="0"/>
+                    <Image Source="Images/V/3.png" Name="UpperArmLeft5" Height="0" Width="0"/>
+                    <Image Source="Images/V/4.png" Name="UpperArmRight5" Height="0" Width="0"/>
+                    <Image Source="Images/V/7.png" Name="HandLeft5" Height="0" Width="0"/>
+                    <Image Source="Images/V/8.png" Name="HandRight5" Height="0" Width="0"/>
+                </Canvas>
+                <Canvas Name="Puppet6">
+                    <Image Source="Images/facechange/super.png" Name="Facechange3" Height="0" Width="0"/>
+                    <Image Source="Images/VI/0.png" Name="Face6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/13.png" Name="CalfLeft6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/14.png" Name="CalfRight6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/15.png" Name="FootLeft6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/15.png" Name="FootRight6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/11.png" Name="ThighLeft6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/12.png" Name="ThighRight6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/10.png" Name="LowerBody6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/9.png" Name="UpperBody6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/5.png" Name="LowerArmLeft6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/6.png" Name="LowerArmRight6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/3.png" Name="UpperArmLeft6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/4.png" Name="UpperArmRight6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/7.png" Name="HandLeft6" Height="0" Width="0"/>
+                    <Image Source="Images/VI/8.png" Name="HandRight6" Height="0" Width="0"/>
+                    <Image gif:ImageBehavior.AnimatedSource="Images/VI/Fire.gif" Name="PowerLeft6" Height="0" Width="0"/>
+                    <Image gif:ImageBehavior.AnimatedSource="Images/VI/Fire.gif" Name="PowerRight6" Height="0" Width="0"/>
+                </Canvas>
+                <Canvas Name="Puppet7">
+                    <Image Source="Images/VII/0.png" Name="Face7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/5.png" Name="CalfLeft7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/6.png" Name="CalfRight7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/13.png" Name="FootLeft7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/14.png" Name="FootRight7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/11.png" Name="ThighLeft7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/12.png" Name="ThighRight7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/10.png" Name="LowerBody7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/9.png" Name="UpperBody7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/5.png" Name="LowerArmLeft7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/6.png" Name="LowerArmRight7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/3.png" Name="UpperArmLeft7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/4.png" Name="UpperArmRight7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/1.png" Name="ShoulderLeft7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/2.png" Name="ShoulderRight7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/7.png" Name="HandLeft7" Height="0" Width="0"/>
+                    <Image Source="Images/VII/8.png" Name="HandRight7" Height="0" Width="0"/>
+                </Canvas>
+                <Canvas Name="Foreground">
+                    <Image gif:ImageBehavior.AnimatedSource="Images/Foreground/Flood.gif" Name="Flood" Height="424" Width="512" Stretch="Fill" Opacity ="0"/>
+                    <Image gif:ImageBehavior.AnimatedSource="Images/Foreground/Rainy.gif" Name="Rainy" Height="424" Width="512" Stretch="Fill" Opacity ="0"/>
+                </Canvas>
+            </Grid>
+        </Viewbox>
+        <TextBlock x:Name="ResponseBar" Grid.Row="1"
+                   TextWrapping="Wrap" FontSize="80" FontFamily="Microsoft YaHei"
+                   TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                   Foreground="White"
+                   Padding="10" Margin="0,30,0,0"
+                   Opacity="0"
+                   />
+        <TextBlock x:Name="Dialogue" Grid.Row="1"
+                   TextWrapping="Wrap" FontSize="80" FontFamily="Microsoft YaHei"
+                   TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"
+                   TextOptions.TextHintingMode="Animated"
+                   Foreground="White" Background="Black"
+                   Padding="10" Margin="0,0,0,30"
+                   Opacity="0"
+                   />
+        <Button Grid.Row="2" Content="鋼鐵人" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,33,10" Click="ScreenshotButton_Click"  Width="100" />
+        <Button Grid.Row="2" Content="黑武士" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="175,10,33,10" Click="ScreenshotButton_Click2"  Width="100" RenderTransformOrigin="0.786,0.389" />
+        <Button Grid.Row="2" Content="透明人" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="350,10,33,10" Click="ScreenshotButton_Click3" Width="100" Visibility="Hidden"/>
+        <Button Grid.Row="2" Content="黑豹" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="525,10,0,10" Click="ScreenshotButton_Click4"  Width="100" />
+        <Button Grid.Row="2" Content="驚奇隊長" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="700,10,0,10" Click="ScreenshotButton_Click5" Width="100"/>
+    </Grid>
+</Window>

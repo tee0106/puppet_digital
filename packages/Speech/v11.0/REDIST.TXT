@@ -1,0 +1,4 @@
+Redistributable Code is identified as the following files and all of the files in the following directories:
+
+[installdirectory]\Redist\SpeechPlatformRuntime.msi
+

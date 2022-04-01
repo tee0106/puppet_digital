@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{269A7B21-FBFE-4E7A-8BBE-C8DE2EC0D833}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Samples.Kinect.BodyBasics</RootNamespace>
+    <AssemblyName>BodyBasics-WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <XefDelaySign>true</XefDelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <OutputPath>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <OutputPath>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Cognitive.LUIS, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Cognitive.LUIS.2.0.2\lib\portable45-net45+win8+wpa81\Microsoft.Cognitive.LUIS.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect">
+      <HintPath>$(KINECTSDK20_DIR)Assemblies\Microsoft.Kinect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Speech, Version=11.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Speech\v11.0\Assembly\Microsoft.Speech.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SpeechClient, Version=0.0.0.0, Culture=neutral, PublicKeyToken=720c26922c782415, processorArchitecture=AMD64">
+      <HintPath>packages\Microsoft.ProjectOxford.SpeechRecognition-x64.1.0.0.7\lib\SpeechClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=1.4.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WpfAnimatedGif.1.4.17\lib\net\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\III\0.png" />
+    <Resource Include="Images\III\1.png" />
+    <Resource Include="Images\III\10.png" />
+    <Resource Include="Images\III\11.png" />
+    <Resource Include="Images\III\12.png" />
+    <Resource Include="Images\III\13.png" />
+    <Resource Include="Images\III\14.png" />
+    <Resource Include="Images\III\2.png" />
+    <Resource Include="Images\III\3.png" />
+    <Resource Include="Images\III\4.png" />
+    <Resource Include="Images\III\5.png" />
+    <Resource Include="Images\III\6.png" />
+    <Resource Include="Images\III\7.png" />
+    <Resource Include="Images\III\8.png" />
+    <Resource Include="Images\III\9.png" />
+    <Resource Include="Images\I\0.png" />
+    <Resource Include="Images\I\1.png" />
+    <Resource Include="Images\I\10.png" />
+    <Resource Include="Images\I\11.png" />
+    <Resource Include="Images\I\12.png" />
+    <Resource Include="Images\I\13.png" />
+    <Resource Include="Images\I\14.png" />
+    <Resource Include="Images\I\2.png" />
+    <Resource Include="Images\I\3.png" />
+    <Resource Include="Images\I\4.png" />
+    <Resource Include="Images\I\5.png" />
+    <Resource Include="Images\I\6.png" />
+    <Resource Include="Images\I\7.png" />
+    <Resource Include="Images\I\8.png" />
+    <Resource Include="Images\I\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background\Dusk.jpg" />
+    <Resource Include="Images\Background\Forest.jpg" />
+    <Resource Include="Images\Background\Library.jpg" />
+    <Resource Include="Images\Background\Night.gif" />
+    <Resource Include="Images\Background\Rainy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Foreground\Flood.gif" />
+    <Resource Include="Images\Foreground\Rainy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Prop\Book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\I\Fire.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\I\Smile.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\III\15.png" />
+    <Resource Include="Images\III\16.png" />
+    <Resource Include="Images\II\Armor.png" />
+    <Resource Include="Images\II\CuisseLeft.png" />
+    <Resource Include="Images\II\CuisseRight.png" />
+    <Resource Include="Images\II\Fauld.png" />
+    <Resource Include="Images\II\GloveLeft.png" />
+    <Resource Include="Images\II\GloveRight.png" />
+    <Resource Include="Images\II\Ironman.png" />
+    <Resource Include="Images\II\JordanLeft.png" />
+    <Resource Include="Images\II\JordanRight.png" />
+    <Resource Include="Images\II\LaserLeft.gif" />
+    <Resource Include="Images\II\LaserRight.gif" />
+    <Resource Include="Images\II\PauldronLeft.png" />
+    <Resource Include="Images\II\PauldronRight.png" />
+    <Resource Include="Images\II\SpringLeft.png" />
+    <Resource Include="Images\II\SpringRight.png" />
+    <Resource Include="Images\II\VambraceLeft.png" />
+    <Resource Include="Images\II\VambraceRight.png" />
+    <Resource Include="Images\IV\0.png" />
+    <Resource Include="Images\IV\1.png" />
+    <Resource Include="Images\IV\10.png" />
+    <Resource Include="Images\IV\11.png" />
+    <Resource Include="Images\IV\12.png" />
+    <Resource Include="Images\IV\13.png" />
+    <Resource Include="Images\IV\14.png" />
+    <Resource Include="Images\IV\2.png" />
+    <Resource Include="Images\IV\3.png" />
+    <Resource Include="Images\IV\4.png" />
+    <Resource Include="Images\IV\5.png" />
+    <Resource Include="Images\IV\6.png" />
+    <Resource Include="Images\IV\7.png" />
+    <Resource Include="Images\IV\8.png" />
+    <Resource Include="Images\IV\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background\Screen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Prop\Burger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background\Restaurant.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\IV\15.png" />
+    <Resource Include="Images\IV\16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\VII\0.png" />
+    <Resource Include="Images\VII\1.png" />
+    <Resource Include="Images\VII\10.png" />
+    <Resource Include="Images\VII\11.png" />
+    <Resource Include="Images\VII\12.png" />
+    <Resource Include="Images\VII\13.png" />
+    <Resource Include="Images\VII\14.png" />
+    <Resource Include="Images\VII\2.png" />
+    <Resource Include="Images\VII\3.png" />
+    <Resource Include="Images\VII\4.png" />
+    <Resource Include="Images\VII\5.png" />
+    <Resource Include="Images\VII\6.png" />
+    <Resource Include="Images\VII\7.png" />
+    <Resource Include="Images\VII\8.png" />
+    <Resource Include="Images\VII\9.png" />
+    <Resource Include="Images\V\0.png" />
+    <Resource Include="Images\V\10.png" />
+    <Resource Include="Images\V\11.png" />
+    <Resource Include="Images\V\12.png" />
+    <Resource Include="Images\V\13.png" />
+    <Resource Include="Images\V\14.png" />
+    <Resource Include="Images\V\15.png" />
+    <Resource Include="Images\V\16.png" />
+    <Resource Include="Images\V\3.png" />
+    <Resource Include="Images\V\4.png" />
+    <Resource Include="Images\V\5.png" />
+    <Resource Include="Images\V\6.png" />
+    <Resource Include="Images\V\7.png" />
+    <Resource Include="Images\V\8.png" />
+    <Resource Include="Images\V\9.png" />
+    <Resource Include="Images\V\BlackPanther.png" />
+    <Resource Include="Images\VI\0.png" />
+    <Resource Include="Images\VI\10.png" />
+    <Resource Include="Images\VI\11.png" />
+    <Resource Include="Images\VI\12.png" />
+    <Resource Include="Images\VI\13.png" />
+    <Resource Include="Images\VI\14.png" />
+    <Resource Include="Images\VI\3.png" />
+    <Resource Include="Images\VI\4.png" />
+    <Resource Include="Images\VI\5.png" />
+    <Resource Include="Images\VI\6.png" />
+    <Resource Include="Images\VI\7.png" />
+    <Resource Include="Images\VI\8.png" />
+    <Resource Include="Images\VI\9.png" />
+    <Resource Include="Images\VI\Fire.gif" />
+    <Resource Include="Images\facechange\blacksumerice.png" />
+    <Resource Include="Images\facechange\Ironman2.png" />
+    <Resource Include="Images\facechange\super.png" />
+    <Resource Include="Images\VI\15.png" />
+    <Content Include="SpeechClient.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
